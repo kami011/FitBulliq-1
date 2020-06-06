@@ -1,3 +1,10 @@
+// FITBULLIQ - PROJECT PROGRAMOWANIE II
+// AUTHORS: BRZOZA KRZYSZTOF, GENDASZ KAMILA
+// shortcuts corresponding to the part of the code to the name
+// BK - BRZOZA KRZYSZTOF ; GK - GENDASZ KAMILA
+
+// BK IS RESPONSIBLE FOR THIS CODE
+
 #include "service.h"
 
 Service::Service()
@@ -53,10 +60,19 @@ void Service::setProductsToMeals()
 {
     try
     {
-        foreach(Meal meal, currentMeals)
+        for(int i=0; i<currentMeals.size(); i++)
         {
-            meal.listProduct = repo.getProductsToMeal(meal);
+            while(currentMeals[i].listProduct.size()>0)
+            {
+                currentMeals[i].listProduct.removeFirst();
+            }
         }
+
+        for(int i=0; i<currentMeals.size(); i++)
+        {
+            currentMeals[i].listProduct= repo.getProductsToMeal(currentMeals[i]);
+        }
+
     }
     catch (std::exception &e)
     {

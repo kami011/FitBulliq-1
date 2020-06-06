@@ -1,3 +1,10 @@
+// FITBULLIQ - PROJECT PROGRAMOWANIE II
+// AUTHORS: BRZOZA KRZYSZTOF, GENDASZ KAMILA
+// shortcuts corresponding to the part of the code to the name
+// BK - BRZOZA KRZYSZTOF ; GK - GENDASZ KAMILA
+
+// BK IS RESPONSIBLE FOR THIS CODE
+
 #ifndef SERVICE_H
 #define SERVICE_H
 
@@ -14,11 +21,13 @@ private:
 
     Repository repo;
 
-    QList<Meal> currentMeals;
 
-    QList<Product> listProducts; //this list is updated by setListProductsByText()
+
 
 public:
+    QList<Product> listProducts; //this list is updated by setListProductsByText() //KG moved from private
+
+    QList<Meal> currentMeals;//KG moved from private
     Service();
     virtual ~Service();
 
